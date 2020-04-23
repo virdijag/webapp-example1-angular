@@ -1,0 +1,32 @@
+[
+    {
+        "articleName": "Article 1",
+        "author": "Joe Bloggs",
+        "summary": "this is an example summary",
+        "creationDate": "2020-04-24 13:00"
+    },
+    {
+        "articleName": "World News",
+        "author": "Joe Bloggs",
+        "summary": "this is an example summary of World News",
+        "creationDate": "2020-04-24 12:00"
+    },
+    {
+        "articleName": "Local News",
+        "author": "Rohan Gupta",
+        "summary": "this is an example summary of local news",
+        "creationDate": "2020-04-23 13:00"
+    },
+    {
+        "articleName": "Sport News",
+        "author": "Lisa Millar",
+        "summary": "this is an example summary of sport News",
+        "creationDate": "2020-04-24 13:10"
+    },
+    {
+        "articleName": "Boxing News",
+        "author": "Joe Bloggs",
+        "summary": "this is an example summary of Boxing News",
+        "creationDate": "2020-04-24 13:50"
+    }
+]
