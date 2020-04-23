@@ -7,12 +7,15 @@
   
     <div class="card-body">
   
-      <form id="artForm" novalidate>
+      <form id="artForm" novalidate
+      (ngSubmit)="handleAdd(artForm.value)"
+      #artForm="ngForm"
+      >
       
         <div class="form-group form-row">
           <label class="col-md-2 col-form-label text-md-right" for="articleName">Article Name</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="articleName" id="articleName" placeholder="Article Name">
+            <input type="text" class="form-control" name="articleName" id="articleName" placeholder="Article Name" ngModel>
           </div><!-- col-md-10 --> 
         </div><!-- form-group --> 
   
@@ -21,18 +24,18 @@
             for="author">Author</label>
           <div class="col-md-10">
             <input type="text" class="form-control" name="author"
-              id="author" placeholder="Author">
+              id="author" placeholder="Author" ngModel>
           </div><!-- col-md-10 -->
         </div><!-- form-group --> 
   
         <div class="form-group form-row">
           <label class="col-md-2 col-form-label text-md-right" for="creationDate">Date</label>
           <div class="col-md-4">
-            <input type="date" class="form-control" id="creationDate" name="creationDate">
+            <input type="date" class="form-control" id="creationDate" name="creationDate" ngModel>
           </div><!-- col-md-4 --> 
           <label class="col-md-2 col-form-label text-md-right" for="creationTime">Time</label>
           <div class="col-md-4">
-            <input type="time" class="form-control" name="creationTime" id="creationTime" >
+            <input type="time" class="form-control" name="creationTime" id="creationTime" ngModel>
           </div><!-- col-md-4 --> 
         </div><!-- form-group -->
   
@@ -40,7 +43,7 @@
           <label class="col-md-2 text-md-right" for="summary">Summary</label>
           <div class="col-md-10">
             <textarea class="form-control" rows="4" cols="50"
-              name="summary" id="summary" placeholder="Summary"></textarea>
+              name="summary" id="summary" placeholder="Summary"ngModel></textarea>
           </div><!-- col-md-10 --> 
         </div><!-- form-group -->
   
