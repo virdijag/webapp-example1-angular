@@ -3,7 +3,8 @@
     *ngFor="let item of articleList">
 
       <div class="mr-3">
-        <button class="article-delete btn btn-sm btn-danger">
+        <button class="article-delete btn btn-sm btn-danger"
+        (click)="handleDelete(item)">
             <fa-icon [icon]="faTimes"></fa-icon>
         </button>
       </div><!-- media-left -->
