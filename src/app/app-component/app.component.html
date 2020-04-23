@@ -6,8 +6,12 @@
         <div class="container">
           <h2 class="py-5">{{title}}</h2>
           <app-add (addEvt)="addArticle($event)"></app-add>
-          <app-search (queryEvt)="searchArticle($event)"></app-search>
-          <app-list [articleList]="articles" (deleteEvt)="deleteArticle($event)"></app-list>
+          <app-search 
+          (queryEvt)="searchArticle($event)"
+          (orderEvt)="orderArticle($event)"
+          [orderBy]="orderBy"
+          [orderType]="orderType"></app-search>
+          <app-list [articleList]="modifiedArticles" (deleteEvt)="deleteArticle($event)"></app-list>
         </div>
         
       </div><!-- col-md-12 -->

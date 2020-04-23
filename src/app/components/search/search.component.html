@@ -3,7 +3,7 @@
       <div class="input-group">
         <input id="SearchArticles" placeholder="Search" type="text" class="form-control" aria-label="Search Articles"
         [(ngModel)]="query"
-        (keyup)="handleQuery(query)"
+        (keyup)="handleQuery()"
         
         >
         <div class="input-group-append">
@@ -12,12 +12,22 @@
           </button>
 
           <div class="sort-menu dropdown-menu dropdown-menu-right">
-            <a class="sort-by dropdown-item" href="#">Article Name</a>
-            <a class="sort-by dropdown-item" href="#">Date</a>
-            <a class="sort-by dropdown-item" href="#">Author</a>
+            <a class="sort-by dropdown-item" href="#" 
+            [ngClass]="{'active': orderBy === 'articleName'}"
+            (click)="handleSort({orderBy: 'articleName', orderType: orderType })">Article Name</a>
+            <a class="sort-by dropdown-item" href="#" 
+            [ngClass]="{'active': orderBy === 'creationDate'}"
+            (click)="handleSort({orderBy: 'creationDate', orderType: orderType })">Date</a>
+            <a class="sort-by dropdown-item" href="#" 
+            [ngClass]="{'active': orderBy === 'author'}"
+            (click)="handleSort({orderBy: 'author', orderType: orderType })">Author</a>
             <div role="separator" class="dropdown-divider"></div>
-            <a class="sort-dir dropdown-item" href="#">Asc</a>
-            <a class="sort-dir dropdown-item" href="#">Desc</a>
+            <a class="sort-dir dropdown-item" href="#" 
+            [ngClass]="{'active': orderType === 'asc'}"
+            (click)="handleSort({orderBy: orderBy, orderType: 'asc' })">Asc</a>
+            <a class="sort-dir dropdown-item" href="#"
+             [ngClass]="{'active': orderType === 'desc'}"
+             (click)="handleSort({orderBy: orderBy, orderType: 'desc' })">Desc</a>
           </div>
         </div><!-- input-group-btn --> 
       </div><!-- input-group --> 
