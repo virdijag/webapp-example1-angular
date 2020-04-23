@@ -1,1 +1,56 @@
-<p>list works!</p>
+<div class="card textcenter mt-3" [ngClass]="{'add-article':showForm}">
+
+    <div class="apt-addheading card-header bg-primary text-white"
+    (click)="toggleArticleDisplay()">
+        <fa-icon [icon]="faPlus"></fa-icon> Add Article
+    </div><!-- card-header -->
+  
+    <div class="card-body">
+  
+      <form id="artForm" novalidate>
+      
+        <div class="form-group form-row">
+          <label class="col-md-2 col-form-label text-md-right" for="articleName">Article Name</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="articleName" id="articleName" placeholder="Article Name">
+          </div><!-- col-md-10 --> 
+        </div><!-- form-group --> 
+  
+        <div class="form-group form-row">
+          <label class="col-md-2 col-form-label text-md-right"
+            for="author">Author</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="author"
+              id="author" placeholder="Author">
+          </div><!-- col-md-10 -->
+        </div><!-- form-group --> 
+  
+        <div class="form-group form-row">
+          <label class="col-md-2 col-form-label text-md-right" for="creationDate">Date</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="creationDate" name="creationDate">
+          </div><!-- col-md-4 --> 
+          <label class="col-md-2 col-form-label text-md-right" for="creationTime">Time</label>
+          <div class="col-md-4">
+            <input type="time" class="form-control" name="creationTime" id="creationTime" >
+          </div><!-- col-md-4 --> 
+        </div><!-- form-group -->
+  
+        <div class="form-group form-row">
+          <label class="col-md-2 text-md-right" for="summary">Summary</label>
+          <div class="col-md-10">
+            <textarea class="form-control" rows="4" cols="50"
+              name="summary" id="summary" placeholder="Summary"></textarea>
+          </div><!-- col-md-10 --> 
+        </div><!-- form-group -->
+  
+        <div class="form-group form-row mb-0">
+          <div class="offset-md-2 col-md-10">
+            <button type="submit" class="btn btn-primary d-block ml-auto"
+            >Add Article</button>
+          </div><!-- col-md-offset-2 --> 
+        </div><!-- form-group -->
+  
+      </form>
+    </div><!-- card-body -->
+  </div><!-- card-primary -->

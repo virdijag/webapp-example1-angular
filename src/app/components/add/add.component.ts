@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add',
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  showForm: boolean;
+  faPlus = faPlus;
+
+  toggleArticleDisplay()  {
+    this.showForm = !this.showForm;
+  }
+
+  constructor() { 
+    this.showForm = true;
+  }
 
   ngOnInit(): void {
   }
