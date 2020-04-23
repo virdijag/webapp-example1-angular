@@ -1,0 +1,66 @@
+/**  Basic Page CSS **/
+body {
+    font-weight: 200;
+    background-color: #337ab7;
+  }
+  
+  header a,
+  footer a {
+    color: white;
+  }
+  
+  footer {
+    font-size: 0.8em;
+  }
+  
+  .bg-primary,
+  .btn-primary {
+    background-color: #377bb5 !important;
+    border: inherit;
+  }
+  
+  .add-article .card-body {
+    display: none;
+  }
+  
+  .art-addheading {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .article-list {
+    font-size: 1.1em;
+  }
+  
+  .article-list .article-item {
+    border-bottom: 1px dotted gray;
+  }
+  
+  .article-list .article-item:last-child {
+    border-bottom: none;
+  }
+  
+  .article-list .article-name {
+    font-weight: 600;
+    color: #337ab7;
+    font-size: 1.3em;
+    line-height: 100%;
+  }
+  
+  .article-list .label-item {
+    font-weight: 600;
+    color: #667b82;
+  }
+  
+  .article-list .art-date {
+    font-style: italic;
+  }
+  
+  .article-list .art-text {
+    line-height: 120%;
+  }
+  
+  .dropdown-item.active,
+  .dropdown-item:active {
+    background-color: #a9aeb2;
+  }
