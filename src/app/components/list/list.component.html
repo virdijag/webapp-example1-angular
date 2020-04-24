@@ -11,15 +11,19 @@
   
       <div class="article-info media-body">
         <div class="article-head d-flex">
-          <span class="article-name" contenteditable="true">{{item.articleName}}</span>
+          <span class="article-name">{{item.artId}}--</span>
+          <span class="article-name" contenteditable="true"
+          #articleName (blur)="handleUpdate(item, 'articleName', articleName.innerText)">{{item.articleName}}</span>
           <span class="art-date ml-auto">{{item.creationDate}}</span>
         </div><!-- article-head -->
   
         <div class="owner-name">
           <span class="label-item">Author: </span>
-          <span contenteditable="true">{{item.author}}</span>
+          <span contenteditable="true"
+          #author (blur)="handleUpdate(item, 'author', author.innerText)">{{item.author}}</span>
         </div>
-        <div class="art-text" contenteditable="true">{{item.summary}}</div>
+        <div class="art-text" contenteditable="true"
+        #summary (blur)="handleUpdate(item, 'summary', summary.innerText)">{{item.summary}}</div>
       </div><!-- article-info -->
     </div><!-- article-item -->
   </div><!-- article-list -->

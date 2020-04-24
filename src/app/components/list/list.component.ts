@@ -9,9 +9,17 @@ export class ListComponent {
   faTimes = faTimes;
   @Input() articleList;
   @Output() deleteEvt = new EventEmitter(); // broadcasts event to parent
-  
-  handleDelete(article:object)
-  {
+  @Output() updateEvt = new EventEmitter();
+
+  handleDelete(article:object)  {
     this.deleteEvt.emit(article);
+  }
+
+  handleUpdate(article:object, labelName: string, newValue: string){
+    this.updateEvt.emit({
+      article: article,
+      labelName: labelName,
+      newValue: newValue
+    });
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { without } from 'lodash'
+import { without, findIndex } from 'lodash'
 
 @Component({
   selector: 'app-root',
@@ -12,15 +12,28 @@ export class AppComponent implements OnInit {
   modifiedArticles: object[];
   orderBy: string;
   orderType: string;
+  lastIndex: number;
 
   deleteArticle(article: object) {
     this.articles = without(this.articles, article);
     this.modifiedArticles = without(this.articles, article);
   }
 
-  addArticle(article: object) {
+  updateArticle(articleInfo){
+    let articleIndex: number;
+    let modifiedIndex: number;
+
+    articleIndex = findIndex(this.articles, { artId: articleInfo.article.artId});
+    modifiedIndex = findIndex(this.modifiedArticles, { artId: articleInfo.article.artId});
+    this.articles[articleIndex][articleInfo.labelName] = articleInfo.newValue;
+    this.modifiedArticles[modifiedIndex][articleInfo.labelName] = articleInfo.newValue;
+  }
+
+  addArticle(article: any) {
+    article.artId = this.lastIndex;
     this.articles.unshift(article);
     this.modifiedArticles.unshift(article);
+    this.lastIndex++;
   }
 
   searchArticle(queryText: string) {
@@ -74,8 +87,12 @@ export class AppComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.lastIndex = 0;
     this.http.get<Object[]>('../assets/data.json').subscribe(data => {
-      this.articles = data;
+      this.articles = data.map((item:any) => {
+        item.artId = this.lastIndex++;
+        return item;
+      });
       this.modifiedArticles = data;
       this.sortArticles();
     });

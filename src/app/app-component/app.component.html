@@ -11,7 +11,10 @@
           (orderEvt)="orderArticle($event)"
           [orderBy]="orderBy"
           [orderType]="orderType"></app-search>
-          <app-list [articleList]="modifiedArticles" (deleteEvt)="deleteArticle($event)"></app-list>
+          <app-list 
+          [articleList]="modifiedArticles" 
+          (deleteEvt)="deleteArticle($event)"
+          (updateEvt)="updateArticle($event)"></app-list>
         </div>
         
       </div><!-- col-md-12 -->
